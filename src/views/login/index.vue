@@ -17,7 +17,7 @@
 
         <el-form-item prop="password" class="item-form">
           <label for="password">密码</label>
-          <el-input id="password" type="text" v-model="ruleForm.password" autocomplete="off" minlength="6" maxlength="20"></el-input>
+          <el-input id="password" type="password" v-model="ruleForm.password" autocomplete="off" minlength="6" maxlength="20"></el-input>
         </el-form-item>
 
         <el-form-item prop="passwords" class="item-form" v-if="model === 'register'">
@@ -288,16 +288,35 @@ export default {
         password: sha1(ruleForm.password),
         code: ruleForm.code
       }
-      Login(requestData).then(response => {
+      root.$store.dispatch('app/login', requestData).then(response => {
         console.log('登录成功')
+        console.log(response)
         let data = response.data
         root.$message({
           message: data.message,
           type: 'success'
         })
+        // 页面跳转
+        root.$router.push({
+          name: 'Console'
+        })
       }).catch(error => {
       console.log(error)
       })
+      // Login(requestData).then(response => {
+      //   console.log('登录成功')
+      //   let data = response.data
+      //   root.$message({
+      //     message: data.message,
+      //     type: 'success'
+      //   })
+      //   // 页面跳转
+      //   root.$router.push({
+      //     name: 'Console'
+      //   })
+      // }).catch(error => {
+      // console.log(error)
+      // })
     })
     /**
      * 注册
