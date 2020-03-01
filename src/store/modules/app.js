@@ -1,7 +1,7 @@
 import { Login } from "@/api/login";
 import { setToKen, removeToKen, removeUserName, setUserName, getUserName } from "@/utils/app";
 const state = {
-  isCollapse: JSON.parse(sessionStorage.getItem('isCollapse')) || false,
+  isCollapse: false || JSON.parse(sessionStorage.getItem('isCollapse')),
   to_ken: '',
   username: getUserName() || ''
   // count: 10
