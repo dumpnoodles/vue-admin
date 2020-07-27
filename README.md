@@ -5,7 +5,7 @@
 npm install
 ```
 
-### Compiles and hot-reloads for development
+### Run
 ```
 npm run serve
 ```
@@ -19,3 +19,9 @@ npm run build
 ```
 npm run lint
 ```
+
+![演示图-1](https://raw.githubusercontent.com/dumpnoodles/vue-admin/master/src/assets/gif/1.gif)
+
+![演示图-2](https://raw.githubusercontent.com/dumpnoodles/vue-admin/master/src/assets/gif/2.gif)
+
+![演示图-3](https://raw.githubusercontent.com/dumpnoodles/vue-admin/master/src/assets/gif/3.gif)
